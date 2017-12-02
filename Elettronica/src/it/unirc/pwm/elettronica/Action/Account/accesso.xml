@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="login" namespace="/" extends="struts-default">
+	
+		<action name="LoginForm">
+			<result>/WebApp/LoginForm.jsp</result>
+		</action>
+		
+		<action name="Login" class="it.unirc.pwm.elettronica.Action.Account.Login">
+			<result name="successResponsabile" type="redirectAction">/secure/RAuthenticated.action</result>
+			<result name="successCliente" type="redirectAction">/secure/CAuthenticated.action</result>
+			<result name="input" type="redirectAction">/LoginForm.action</result>
+		</action>
+		
+	</package>
+	
+	<package name="logout" namespace="/" extends="struts-default">
+
+		<action name="Logout" class="it.unirc.pwm.elettronica.Action.Account.Logout">
+			<result>/WebApp/Checkout.jsp</result>
+			<result name="input">/WebApp/Contatti.jsp</result>
+		</action>
+
+	</package>
+
+	<package name="secure" namespace="/secure" extends="struts-default">
+	
+		<interceptors>
+		
+			<!-- definizione di un nuovo interceptor -->
+			<interceptor name="authenticationClienteInterceptor" class="it.unirc.pwm.elettronica.Action.Account.utils.AuthenticationClienteInterceptor" />
+			<interceptor name="authenticationResponsabileInterceptor" class="it.unirc.pwm.elettronica.Action.Account.utils.AuthenticationResponsabileInterceptor" />
+
+			<!-- definizione di un nuovo stack di interceptor -->
+			<interceptor-stack name="secureStack">
+				<interceptor-ref name="authenticationClienteInterceptor" />
+				<interceptor-ref name="authenticationResponsabileInterceptor" />
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+			
+		</interceptors>
+
+
+		<global-results>
+			<result name="login" type="redirect">/WebApp/LoginForm.jsp</result>
+		</global-results>
+
+		<action name="CAuthenticated" class="it.unirc.pwm.elettronica.Action.Account.CAuthenticated">
+			<result name="success" type="redirect">/WebApp/indexC.jsp</result>
+			<interceptor-ref name="authenticationClienteInterceptor"/>
+		</action>
+
+		
+
+		<action name="RAuthenticated" class="it.unirc.pwm.elettronica.Action.Account.RAuthenticated">
+			<result name="success" type="redirect">/WebApp/indexR.jsp</result>
+			<interceptor-ref name="authenticationResponsabileInterceptor"/>
+		</action>
+	</package>
+</struts>

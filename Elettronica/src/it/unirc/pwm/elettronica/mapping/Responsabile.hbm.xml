@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping
+PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="it.unirc.pwm.elettronica.mapping">
+	<joined-subclass name="it.unirc.pwm.elettronica.Responsabile.model.Responsabile" extends="it.unirc.pwm.elettronica.Account.model.Account">
+		<key>
+			<column name="idaccount" />
+		</key>
+		<property name="codiceF" />
+		<property name="nome" />
+		<property name="cognome" />
+		<property name="dataNascita" type="date" />
+		<property name="telefono" />
+		<property name="email" />
+		<set name="ordini" lazy="false" cascade="save-update"> <!-- lazy quindi con un cdl non caricare tutti gli studenti -->
+			<key>
+				<column name="ordini" /><!-- Devo indicare l'attributo di join - 
+					nell'oggetto manca -->
+			</key>
+			<one-to-many class="it.unirc.pwm.elettronica.Articolo.model.Articolo" />
+		</set>
+	</joined-subclass>
+</hibernate-mapping>

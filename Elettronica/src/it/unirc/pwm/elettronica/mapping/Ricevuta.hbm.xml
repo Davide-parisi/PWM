@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping
+PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="it.unirc.pwm.elettronica.mapping">
+	<class name="it.unirc.pwm.elettronica.Ricevuta.model.Ricevuta">
+		<composite-id name="idr" class="it.unirc.pwm.elettronica.Ricevuta.model.RicevutaId">
+			<key-property name="idricevuta" type="int">
+				<column name="idricevuta" />
+			</key-property>
+			<key-property name="data" type="date">
+				<column name="data" />
+			</key-property>
+		</composite-id>
+		<property name="importo" />
+		<set name="acquisti" table="acquisto" inverse="true" lazy="false" fetch="select" cascade="save-update">
+            <key>
+                <column name="idricevuta" not-null="true" />
+                <column name="data" not-null="true" />
+            </key>
+            <one-to-many class="it.unirc.pwm.elettronica.Acquisto.model.Acquisto" />
+        </set>
+	</class>
+</hibernate-mapping>

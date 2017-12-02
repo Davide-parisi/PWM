@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping
+PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="it.unirc.pwm.elettronica.mapping">
+	<joined-subclass name="it.unirc.pwm.elettronica.Cliente.model.Cliente" extends="it.unirc.pwm.elettronica.Account.model.Account">
+		<key>
+			<column name="idaccount" />
+		</key>
+		<property name="codiceF" />
+		<property name="nome" />
+		<property name="cognome" />
+		<property name="dataNascita" type="date" />
+		<property name="telefono" />
+		<property name="email" />
+        <component name="indirizzo" class="it.unirc.pwm.elettronica.Cliente.model.Indirizzo">
+			<property name="via" column="indirizzo_via" type="string" />
+			<property name="civico" column="indirizzo_civico" type="integer" />
+		</component>	
+		<set name="promozioni" table="Cliente_Promozione" cascade="save-update" inverse="true" lazy="false"> <!-- asimmetria, si può fare anche l'inverso -->
+            <key column="idaccount" />
+            <many-to-many column="idpromozione"   class="it.unirc.pwm.elettronica.Promozione.model.Promozione" />
+        </set>
+        <set name="acquisti" table="acquisto" inverse="true" lazy="false" fetch="select" cascade="save-update">
+            <key>
+                <column name="idaccount" not-null="true" />
+            </key>
+            <one-to-many class="it.unirc.pwm.elettronica.Acquisto.model.Acquisto" />
+        </set>
+        	<property name="abilitato" />   
+	</joined-subclass>
+</hibernate-mapping>

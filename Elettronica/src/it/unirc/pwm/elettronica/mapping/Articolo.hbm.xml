@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping
+PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="it.unirc.pwm.sanitaria.mapping">
+    <class name="it.unirc.pwm.elettronica.Articolo.model.Articolo">
+        <id name="idarticolo">
+            <generator class="identity" />
+        </id>
+        <property name="nome" />
+        <property name="descrizione" />
+        <property name="prezzo" type="double"/>
+        <property name="numeroPezzi" />
+        <set name="acquisti" table="acquisto" inverse="true" lazy="false" fetch="select" cascade="save-update">
+            <key>
+                <column name="idarticolo" not-null="true" />
+            </key>
+            <one-to-many class="it.unirc.pwm.elettronica.Acquisto.model.Acquisto" />
+        </set>
+    </class>
+</hibernate-mapping>

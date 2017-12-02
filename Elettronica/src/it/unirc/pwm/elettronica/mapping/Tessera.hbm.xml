@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping
+PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="it.unirc.pwm.elettronica.mapping">
+	<class name="it.unirc.pwm.elettronica.Tessera.model.Tessera">
+        <id name="idtessera">
+			<generator class="foreign" >   <!-- deve corrispondere alla matricola presa dalla tabella Studente, ESTERNA -->
+				<param name="property">proprietario</param>  <!-- prendi l'id della classe Studente -->
+			</generator>
+        </id>
+        <property name="validita" type="date"/>
+        <property name="totalePunti"/>
+        <one-to-one name="proprietario" constrained="true" cascade="save-update"/>   <!-- salva in automatico lo studente associato, constrained perchè è obbligatoria (1,1) -->
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping
+PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="it.unirc.pwm.elettronica.mapping">
+	<class name="it.unirc.pwm.elettronica.Acquisto.model.Acquisto">
+		<composite-id name="ida" class="it.unirc.pwm.elettronica.Acquisto.model.AcquistoId">
+			<key-property name="idaccount">
+				<column name="idaccount" />
+			</key-property>
+			<key-property name="idarticolo">
+				<column name="idarticolo" />
+			</key-property>
+			<key-property name="idricevuta">
+				<column name="idricevuta" />
+			</key-property>
+			<key-property name="data" type="date">
+				<column name="data" />
+			</key-property>
+		</composite-id>
+		<many-to-one name="cliente" class="it.unirc.pwm.elettronica.Cliente.model.Cliente" update="false" insert="false" fetch="select" lazy="false" >
+			<column name="idaccount" not-null="true" />
+		</many-to-one>
+		<many-to-one name="articolo" class="it.unirc.pwm.elettronica.Articolo.model.Articolo" update="false" 	insert="false" fetch="select" lazy="false">
+			<column name="idarticolo" not-null="true" />
+		</many-to-one>
+		<many-to-one name="ricevuta" class="it.unirc.pwm.elettronica.Ricevuta.model.Ricevuta" update="false" 	insert="false" fetch="select" lazy="false">
+			<column name="idricevuta" not-null="true" />
+			<column name="data" not-null="true" />
+		</many-to-one>
+		<property name="quantita">
+			<column name="quantita" />
+		</property>
+	</class>
+</hibernate-mapping>

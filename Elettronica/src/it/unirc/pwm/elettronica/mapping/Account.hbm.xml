@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping
+PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="it.unirc.pwm.elettronica.mapping">
+    <class name="it.unirc.pwm.elettronica.Account.model.Account">
+        <id name="idaccount">
+            <generator class="identity" />
+        </id>
+        <property name="username">
+            <column name="username" unique="true"/>
+        </property>
+        <property name="password">
+            <column name="password" />
+        </property>
+    </class>
+</hibernate-mapping>

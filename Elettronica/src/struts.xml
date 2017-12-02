@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN" "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+
+<struts>
+
+   <!--
+   			For the purposes of the book, we will leave devMode set to true.  This
+   			allows several things to occur including provision of debugging level information
+   			on error pages as well as reloading of various resources with each request.
+   --> 
+   <constant name="struts.devMode" value="true" /> <!-- a false per sicurezza quando è online perchè mostra gli errori -->
+ 		<!-- 
+			You can define packages directly in this file, but its probably best
+		   	to modularize the configuration files with separate xml files for each
+		   	package.  Ulitmately its all the same because the include element, seen
+		   	below, pulls the included configuration document directly in to the 
+		   	primary document.  The only thing to consider is that a referenced
+		   	element must have been declared above the referring element.         
+		-->
+		
+		<!-- 
+				This is the menu action that will allow the reader to see the different
+				samples actions from the different chapters in a menu format.  We declare
+				it here, in the root namespace, because its not really related to any of the
+				specific examples or chapters, its just a kind of utility for the whole 
+				application.
+		-->
+		
+		<package name="default" namespace="/" extends="struts-default"> 
+			<action name="Home">
+				<result>/WebApp/Home.jsp</result>
+			</action>
+		</package>	
+ 	<include file="it/unirc/pwm/elettronica/Action/Account/accesso.xml"/>
+    <include file="it/unirc/pwm/elettronica/Action/Account/registration.xml"/>
+<!--  	<include file="it/unirc/pwm/esempio1/esempio1.xml"/>
+    <include file="it/unirc/pwm/esempio2/esempio2.xml"/>
+    <include file="it/unirc/pwm/esempio3/esempio3.xml"/>
+ 	<include file="it/unirc/pwm/esempio4/esempio4.xml"/>   
+ 	<include file="it/unirc/pwm/esempio5/esempio5.xml"/>  
+ 	<include file="it/unirc/pwm/esempio6/esempio6.xml"/> 
+  	<include file="it/unirc/pwm/esempio7/esempio7.xml"/>
+  	<include file="it/unirc/pwm/esempio8/esempio8.xml"/>
+ 	<include file="it/unirc/pwm/esempio9/esempio9.xml"/>
+ 	<include file="it/unirc/pwm/esempio9ok/esempio9ok.xml"/>
+ 	<include file="it/unirc/pwm/esempio9ok2/esempio9ok2.xml"/>
+ 	<include file="it/unirc/pwm/esempio10/esempio10.xml"/>
+ 	<include file="it/unirc/pwm/esempio11/esempio11.xml"/>
+ 	<include file="it/unirc/pwm/esempio12/esempio12.xml"/>
+ 	<include file="it/unirc/pwm/esempio13/esempio13.xml"/>
+ 	<include file="it/unirc/pwm/esempio14/esempio14.xml"/>
+ 	<include file="it/unirc/pwm/esempio15/esempio15.xml"/> 
+ 	 -->
+
+
+</struts>

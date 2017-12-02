@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping
+PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="it.unirc.pwm.elettronica.mapping">
+	<class name="it.unirc.pwm.elettronica.Promozione.model.Promozione">
+		<id name="idpromozione">
+            <generator class="identity" />
+        </id>
+		<property name="descrizione" />
+		<property name="puntiTessera" />
+		<set name="clienti" table="Cliente_Promozione" cascade="save-update" inverse="true" lazy="false"> <!-- asimmetria, si può fare anche l'inverso -->
+            <key column="idpromozione" />
+            <many-to-many column="idaccount"   class="it.unirc.pwm.elettronica.Cliente.model.Cliente" />
+        </set>
+	</class>
+</hibernate-mapping>
