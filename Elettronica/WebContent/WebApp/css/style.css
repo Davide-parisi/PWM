@@ -1286,63 +1286,6 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button {
 	margin-bottom: 15px;
 }
 
-label[for="loginUsername"] {
-    color: black;
-    font-size:15px;
-    padding: 30px;
-    display: block;
-  }
- 
-label[for="loginPassword"] {
-    color: black;
-    font-size:15px;
-    padding: 30px;
-    display: block;
-  }
-  
-label[for="Register_user_name"] {
-    color: black;
-    font-size:15px;
-    padding: 30px;
-    display: block;
-  }
-label[for="Register_user_username"] {
-    color: black;
-    font-size:15px;
-    padding: 30px;
-    display: block;
-  }
-label[for="Register_user_password"] {
-    color: black;
-    font-size:15px;
-    padding: 30px;
-    display: block;
-  }
-label[for="Register_user_dataDiNascita"] {
-    color: black;
-    font-size:15px;
-    padding: 30px;
-    display: block;
-  }
-label[for="Register_user_email"] {
-    color: black;
-    font-size:15px;
-    padding: 30px;
-    display: block;
-    font-family: sans-serif;
-  }
-label[for="Register_user_sesso"] {
-    color: black;
-    font-size:15px;
-    padding: 30px;
-    display: block;
-  }
-
-label[for="Register_user_accettaCondizioni"] {
-
-  }
-
-
 .single-shop-product h2 {
 	font-size: 20px;
 	margin: 10px 0;
@@ -1392,4 +1335,11 @@ label[for="Register_user_accettaCondizioni"] {
     text-transform: uppercase;
     text-align: center;
     margin-bottom: 10px;
+}
+
+.label{
+	color: black;
+    font-size:15px;
+    padding: 30px;
+    display: block;
 }

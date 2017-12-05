@@ -31,31 +31,31 @@ public class AggiungiR extends ActionSupport implements ModelDriven<Responsabile
 		return responsabile;
 	}
 	
-	public void validate(){
-		
-		if( getModel().getPassword() == getModel().getUsername()){
-			this.addActionMessage("La password e l'username devono essere diversi");
-		}
-		
-		if( getModel().getTelefono()==0){
-			this.addFieldError("telefono", "Telefono is required.");
-		}
-		
-		if( getModel().getPassword().length()==0){
-			this.addFieldError("password", "Password is required.");
-		}
-		
-		if(getModel().getPassword().length()<6){
-			this.addFieldError("password", "Password must be longer than 6 chars.");
-		}
-		
-		if( getModel().getNome().length()==0){
-			this.addFieldError("nome", "Real name is required.");
-		}
-		
-		if( getModel().getUsername().length()==0){
-			this.addFieldError("username", "Username is required.");
-		}	
-	}
+//	public void validate(){
+//		
+////		if( getModel().getPassword() == getModel().getUsername()){
+////			this.addActionMessage("La password e l'username devono essere diversi");
+////		}
+//		
+//		if( responsabile.getTelefono()==0){
+//			this.addFieldError("telefono", "Telefono is required.");
+//		}
+//		
+//		if( responsabile.getPassword().length()==0){
+//			this.addFieldError("password", "Password is required.");
+//		}
+//		
+//		if(responsabile.getPassword().length()<6){
+//			this.addFieldError("password", "Password must be longer than 6 chars.");
+//		}
+//		
+//		if( responsabile.getNome().length()==0){
+//			this.addFieldError("nome", "Real name is required.");
+//		}
+//		
+//		if( responsabile.getUsername().length()==0){
+//			this.addFieldError("username", "Username is required.");
+//		}	
+//	}
 	
 }

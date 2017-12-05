@@ -24,14 +24,14 @@
 		<div style="background-color:#ffaacc;"><s:actionerror/></div>
 	    
 	<s:form action="Register" style="text-align: center; margin: auto; padding: 30px;">
-    	<s:textfield label="Nome" name="cliente.nome"/>
+    	<s:textfield key="global.label.nome" name="cliente.nome"/>
     	<s:textfield label="Cognome" name="cliente.cognome"/>
     	<s:textfield label="Codice Fiscale" requiredLabel="true" name="cliente.codiceF"/>
     	<s:textfield label="Data di nascita (gg/mm/aa)" name="cliente.dataNascita"/>
     	<s:textfield label="Email" name="cliente.email"/>
     	<s:textfield label="Telefono" name="cliente.telefono"/>
-    	<s:textfield label="Username" requiredLabel="true" name="cliente.username"/>
-    	<s:password label="Password" showPassword="true" requiredLabel="true" name="cliente.password"/>
+    	<s:textfield key="global.label.username" requiredLabel="true" name="cliente.username"/>
+    	<s:password key="global.label.password" showPassword="true" requiredLabel="true" name="cliente.password"/>
     	<s:checkbox label="Accetti le condizioni?" name="cliente.accettaCondizioni"/>
     	<s:submit value="Registrati" style="margin: 30px;"/>
 		</s:form>

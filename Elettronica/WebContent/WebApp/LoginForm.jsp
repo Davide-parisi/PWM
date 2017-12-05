@@ -29,8 +29,8 @@
 <div class="container">
 <div class="login-form-wrap">
 		<s:form action="Login" style="text-align: center; margin: auto;">
-    	<s:textfield id="loginUsername" name="username" key="global.label.username" requiredLabel="true"/>
-    	<s:password id="loginPassword" name="password" key="global.label.password" requiredLabel="true"/>
+    	<s:textfield name="username" key="global.label.username" requiredLabel="true"/>
+    	<s:password name="password" key="global.label.password" requiredLabel="true"/>
     	<s:submit value="Accedi"/>
 		</s:form>
 	    <hr>

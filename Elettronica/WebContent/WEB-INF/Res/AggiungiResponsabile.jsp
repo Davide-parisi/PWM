@@ -27,7 +27,7 @@
 				<s:form action="AggiungiR" namespace="/"
 					style="text-align: center; margin: auto; padding: 30px;">
 					<s:textfield name="nome"
-						label="global.label.nome" />
+						key="global.label.nome" />
 					<s:textfield name="cognome" label="Cognome" />
 					<s:textfield name="codiceF" label="Codice Fiscale"
 						requiredLabel="true" />
@@ -35,9 +35,9 @@
 					<s:textfield name="email" label="Email" />
 					<s:textfield name="telefono" label="Telefono" />
 					<s:textfield name="username"
-						label="global.label.username" requiredLabel="true" />
+						key="global.label.username" requiredLabel="true" />
 					<s:password name="password"
-						label="global.label.password" showPassword="true"
+						key="global.label.password" showPassword="true"
 						requiredLabel="true" />
 					<s:checkbox name="accettaCondizioni" label="Accetti le condizioni?" />
 					<s:submit value="Aggiungi" style="margin: 30px;"/>

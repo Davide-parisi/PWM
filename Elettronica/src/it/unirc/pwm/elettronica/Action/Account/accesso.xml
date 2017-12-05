@@ -6,7 +6,7 @@
 <struts>
 	<package name="login" namespace="/" extends="struts-default">
 	
-		<action name="LoginForm">
+		<action name="LoginForm" class="it.unirc.pwm.elettronica.Action.Account.LoginForm">
 			<result>/WebApp/LoginForm.jsp</result>
 		</action>
 		
