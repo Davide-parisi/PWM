@@ -13,10 +13,10 @@ public class Logout extends ActionSupport implements SessionAware{
 
 	public String execute(){
 		
-		if(session.isEmpty()) return SUCCESS;  //Da commentare dopo
+//		if(session.isEmpty()) return SUCCESS;  //Da commentare dopo
+		
 		if(session.containsKey("cliente")) 
 			session.remove("cliente");
-		
 		if(session.containsKey("responsabile"))
 			session.remove("responsabile");
 

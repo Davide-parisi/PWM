@@ -1,7 +1,7 @@
 <!DOCTYPE validators PUBLIC "-//Apache Struts//XWork Validator 1.0.3//EN"
         "http://struts.apache.org/dtds/xwork-validator-1.0.3.dtd">
 <validators>
-	<field name="user.password">
+	<field name="cliente.password">
 		<field-validator type="requiredstring">
 			<message key="password.required"></message>
 		</field-validator>
@@ -12,7 +12,7 @@
 			</message>
 		</field-validator>
 	</field>
-	<field name="user.username">
+	<field name="cliente.username">
 		<field-validator type="requiredstring">
 			<message>Username is required.</message>
 		</field-validator>
@@ -24,16 +24,16 @@
 		</field-validator>
 	</field>
 
-	<field name="user.email">
+	<field name="cliente.email">
 		<field-validator type="requiredstring">
 			<message>You must enter a value for email.</message>
 		</field-validator>
 		<field-validator type="email">
-			<message>L'email ${user.email} non è valida</message>
+			<message>L'email ${cliente.email} non è valida</message>
 		</field-validator>
 	</field>
 	<validator type="expression">
-		<param name="expression">user.username != user.password</param>
+		<param name="expression">cliente.username != cliente.password</param>
 		<message>Username and password can't be the same.</message>
 	</validator>
 </validators>

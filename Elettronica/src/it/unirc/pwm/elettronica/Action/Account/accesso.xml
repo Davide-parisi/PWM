@@ -11,8 +11,9 @@
 		</action>
 		
 		<action name="Login" class="it.unirc.pwm.elettronica.Action.Account.Login">
-			<result name="successResponsabile" type="redirectAction">/secure/RAuthenticated.action</result>
-			<result name="successCliente" type="redirectAction">/secure/CAuthenticated.action</result>
+			<interceptor-ref name="defaultStack" />
+			<result name="successResponsabile" type="redirectAction">/secure/AreaRiservataResponsabile.action</result>
+			<result name="successCliente" type="redirectAction">/secure/AreaRiservataCliente.action</result>
 			<result name="input" type="redirectAction">/LoginForm.action</result>
 		</action>
 		
@@ -22,7 +23,6 @@
 
 		<action name="Logout" class="it.unirc.pwm.elettronica.Action.Account.Logout">
 			<result>/WebApp/Checkout.jsp</result>
-			<result name="input">/WebApp/Contatti.jsp</result>
 		</action>
 
 	</package>
@@ -49,16 +49,15 @@
 			<result name="login" type="redirect">/WebApp/LoginForm.jsp</result>
 		</global-results>
 
-		<action name="CAuthenticated" class="it.unirc.pwm.elettronica.Action.Account.CAuthenticated">
-			<result name="success" type="redirect">/WebApp/indexC.jsp</result>
-			<interceptor-ref name="authenticationClienteInterceptor"/>
-		</action>
-
-		
-
-		<action name="RAuthenticated" class="it.unirc.pwm.elettronica.Action.Account.RAuthenticated">
-			<result name="success" type="redirect">/WebApp/indexR.jsp</result>
+		<action name="AreaRiservataResponsabile">
+			<result name="success">/WEB-INF/Res/indexR.jsp</result>
 			<interceptor-ref name="authenticationResponsabileInterceptor"/>
 		</action>
+		
+			<action name="AreaRiservataCliente">
+			<result name="success">/WEB-INF/Client/ProfiloCliente.jsp</result>
+			<interceptor-ref name="authenticationClienteInterceptor"/>
+		</action>
+		
 	</package>
 </struts>

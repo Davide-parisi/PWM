@@ -50,13 +50,9 @@ public class Login extends ActionSupport implements SessionAware {
 		a.setUsername(getUsername());
 		a.setPassword(getPassword());
 		a=adao.esisteAccount(a);
-		addActionMessage("Account OK");
 		
 		if(a==null)
-
 			return INPUT;
-
-		addActionMessage("Account Esiste");
 
 		Responsabile r=new Responsabile();
 		r.setIdaccount(a.getIdaccount());
@@ -66,22 +62,14 @@ public class Login extends ActionSupport implements SessionAware {
 		c=cdao.cercaCliente(c);
 		
 		if(c!=null) {
-			System.out.println("Cliente OK");
 			session.put("cliente", c);
 			return "successCliente";
 		}
-
-		else if(r!=null){
-			addActionMessage("Responsabile OK");
 			session.put("responsabile", r);
 			return "successResponsabile";
-		}
 
-		else {
-			return INPUT;
 		}
-
-	}
+	
 
 	public void setSession(Map<String, Object> session) {
 		this.session = session;

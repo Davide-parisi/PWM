@@ -48,14 +48,17 @@
 				<div class="col-md-8">
 					<div class="user-menu">
 						<ul>
-							<li><a href="#"><i class="fa fa-user"></i> My Account</a></li>
+							<s:if test="#session['cliente']!=null">
+							<li><a href="<s:url action='AreaRiservataCliente' namespace='/secure'/>"><i class="fa fa-user"></i> My Account</a></li>
+							</s:if>
+							<s:if test="#session['responsabile']!=null">
+							<li><a href="<s:url action='AreaRiservataResponsabile' namespace='/secure'/>"><i class="fa fa-user"></i> My Account</a></li>
+							</s:if>
 							<li><a href="#"><i class="fa fa-heart"></i> Wishlist</a></li>
 							<li><a href=<%=root+"/secure/Authenticated"%>><i class="fa fa-user"></i> My
 									Cart</a></li>
-							<li><a href=<%=root+"/WebApp/Checkout.jsp"%>><i class="fa fa-user"></i>
-									Checkout</a></li>
 							<s:if test="%{(#session.isEmpty())}">
-							<li><a href="<s:url action='LoginForm'/>"><i class="fa fa-user"></i>Login</a></li>
+							<li><a href="<s:url action='LoginForm' namespace='/'/>"><i class="fa fa-user"></i>Login</a></li>
 							</s:if>
 							<s:if test="%{!(#session.isEmpty())}">
 							<li><a href=<%=root+"/Logout"%>><i class="fa fa-user"></i>Logout</a></li>
@@ -133,10 +136,12 @@
 						<li><a href=<%=root+"/WebApp/Catalogo.jsp"%>>Shop page</a></li>
 						<li><a href=<%=root+"/WebApp/SingleProduct.jsp"%>>Single product</a></li>
 						<li><a href=<%=root+"/WebApp/Cart.jsp"%>>Cart</a></li>
-						<li><a href=<%=root+"/WebApp/Checkout.jsp"%>>Checkout</a></li>
+						<s:if test="%{!(#session.isEmpty())}">
+						<li><a href=<%=root+"/Logout"%>>Checkout</a></li>
+						</s:if>						
 						<li><a href="#">Category</a></li>
 						<li><a href="#">Others</a></li>
-						<li><a href=<%=root+"/secure/Contatti"%>>Contact</a></li>
+						<li><a href=<%=root+"/WebApp/Contatti.jsp"%>>Contact</a></li>
 					</ul>
 				</div>
 			</div>

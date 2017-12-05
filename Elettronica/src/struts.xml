@@ -4,6 +4,8 @@
 
 <struts>
 
+	<constant name="struts.custom.i18n.resources" value="global" />
+
    <!--
    			For the purposes of the book, we will leave devMode set to true.  This
    			allows several things to occur including provision of debugging level information
