@@ -4,13 +4,13 @@
 
 	<field name="username">
 		<field-validator type="requiredstring">
-			<message>Richiesto </message>
+			<message key="global.username.required"></message>
 		</field-validator>
 	</field>
 
 	<field name="password">
 		<field-validator type="requiredstring">
-			<message>Richiesto </message>
+			<message key="global.password.required"></message>
 		</field-validator>
 	</field>
 

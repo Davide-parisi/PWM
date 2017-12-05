@@ -3,24 +3,19 @@
 <validators>
 	<field name="cliente.password">
 		<field-validator type="requiredstring">
-			<message key="password.required"></message>
+			<message key="global.password.required"></message>
 		</field-validator>
-		<field-validator type="stringlength">
-			<param name="maxLength">10</param>
-			<param name="minLength">6</param>
-			<message>La password deve essere compresa tra 6 e 10 caratteri.
+		<field-validator type="passwordstrenght">
+			<message key="password.short">
 			</message>
 		</field-validator>
 	</field>
 	<field name="cliente.username">
 		<field-validator type="requiredstring">
-			<message>Username is required.</message>
+			<message key="global.username.required"></message>
 		</field-validator>
-		<field-validator type="stringlength">
-			<param name="maxLength">8</param>
-			<param name="minLength">5</param>
-			<message>L'username ${username} non è valido, deve essere compreso
-				tra ${minLength} e ${maxLength} caratteri. </message>
+		<field-validator type="usernameexist">
+			<message key="username.exist"></message>
 		</field-validator>
 	</field>
 

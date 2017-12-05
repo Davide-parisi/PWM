@@ -32,7 +32,6 @@
     	<s:textfield label="Telefono" name="cliente.telefono"/>
     	<s:textfield key="global.label.username" requiredLabel="true" name="cliente.username"/>
     	<s:password key="global.label.password" showPassword="true" requiredLabel="true" name="cliente.password"/>
-    	<s:checkbox label="Accetti le condizioni?" name="cliente.accettaCondizioni"/>
     	<s:submit value="Registrati" style="margin: 30px;"/>
 		</s:form>
 

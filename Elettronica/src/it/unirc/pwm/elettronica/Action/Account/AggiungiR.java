@@ -7,16 +7,21 @@ import it.unirc.pwm.elettronica.Responsabile.model.Responsabile;
 import it.unirc.pwm.elettronica.Responsabile.model.DAO.ResponsabileDAOFactory;
 import it.unirc.pwm.elettronica.Responsabile.model.DAO.ResponsabileDAOInterface;
 
-
 public class AggiungiR extends ActionSupport implements ModelDriven<Responsabile>{
 
 	private static final long serialVersionUID = 1L;
-	private Responsabile responsabile;
+	private Responsabile responsabile= new Responsabile();
 	private ResponsabileDAOInterface rdao=ResponsabileDAOFactory.getDAO();
+	
+	public Responsabile getModel() {
+		return responsabile;
+	}	
 	
 	public Responsabile getResponsabile(){
 		return responsabile;
-	}public void setResponsabile (Responsabile responsabile) {
+	}
+	
+	public void setResponsabile (Responsabile responsabile) {
 		this.responsabile = responsabile;
 	}
 
@@ -25,37 +30,23 @@ public class AggiungiR extends ActionSupport implements ModelDriven<Responsabile
 		rdao.creaResponsabile(getModel());
 		return SUCCESS;
 	}
-	@Override
-	public Responsabile getModel() {
-		// TODO Auto-generated method stub
-		return responsabile;
-	}
 	
-//	public void validate(){
-//		
-////		if( getModel().getPassword() == getModel().getUsername()){
-////			this.addActionMessage("La password e l'username devono essere diversi");
-////		}
-//		
-//		if( responsabile.getTelefono()==0){
-//			this.addFieldError("telefono", "Telefono is required.");
-//		}
-//		
-//		if( responsabile.getPassword().length()==0){
-//			this.addFieldError("password", "Password is required.");
-//		}
-//		
-//		if(responsabile.getPassword().length()<6){
-//			this.addFieldError("password", "Password must be longer than 6 chars.");
-//		}
-//		
-//		if( responsabile.getNome().length()==0){
-//			this.addFieldError("nome", "Real name is required.");
-//		}
-//		
-//		if( responsabile.getUsername().length()==0){
-//			this.addFieldError("username", "Username is required.");
-//		}	
-//	}
+	public void validate(){
+		if( getModel().getPassword().length()==0){
+			this.addFieldError("password", "Password is required.");
+		}
+		
+		if(getModel().getPassword().length()<6){
+			this.addFieldError("password", "Password must be longer than 6 chars.");
+		}
+		
+		if(getModel().getNome().length()==0){
+			this.addFieldError("name", "Real name is required.");
+		}
+		
+		if(getModel().getUsername().length()==0){
+			this.addFieldError("username", "Username is required.");
+		}	
+	}
 	
 }

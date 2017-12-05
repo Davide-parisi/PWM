@@ -23,7 +23,6 @@ public class Register extends ActionSupport{
 		
 		cdao.creaCliente(cliente);
 		
-		
 		return SUCCESS;
 	}
 }

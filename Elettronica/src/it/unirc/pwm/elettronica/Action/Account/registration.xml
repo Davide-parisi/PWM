@@ -26,7 +26,7 @@
 			<interceptor-ref name="defaultStack" />
 			<interceptor-ref name="timer" />
 			<interceptor-ref name="logger" />
-			<result name="success">/WEB-INF/RegistrationConfirmed.jsp</result>
+			<result name="success">/WebApp/LoginForm.jsp</result>
 			<result name="input">/WebApp/Registration.jsp</result>
 		</action>
 		
@@ -42,7 +42,7 @@
 			<interceptor-ref name="defaultStack" />
 			<interceptor-ref name="timer" />
 			<interceptor-ref name="logger" />
-			<result name="success">/WEB-INF/RegistrationConfirmed.jsp</result>
+			<result name="success">/WEB-INF/Res/indexR.jsp</result>
 			<result name="input">/WEB-INF/Res/AggiungiResponsabile.jsp</result>
 		</action>
 		

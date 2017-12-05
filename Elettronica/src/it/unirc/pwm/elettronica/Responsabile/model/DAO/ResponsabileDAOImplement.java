@@ -20,8 +20,13 @@ public class ResponsabileDAOImplement implements ResponsabileDAOInterface{
 		session = HibernateUtil.getSessionFactory().openSession();
 		boolean control=false;
 		try {
+			System.out.println(r.getUsername().toString());
+			System.out.println(r.getPassword().toString());
+			System.out.println(r.toString());
 			transaction=session.beginTransaction();
+			System.out.println("Transazione avviata");
 			session.save(r);
+			System.out.println("Responsabile salvato");
 			logger.info("Responsabile inserito");
 			control=true;
 			transaction.commit();
