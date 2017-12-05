@@ -14,7 +14,7 @@
 			<interceptor-ref name="defaultStack" />
 			<result name="successResponsabile" type="redirectAction">/secure/AreaRiservataResponsabile.action</result>
 			<result name="successCliente" type="redirectAction">/secure/AreaRiservataCliente.action</result>
-			<result name="input" type="redirectAction">/LoginForm.action</result>
+			<result name="input">/WebApp/LoginForm.jsp</result>
 		</action>
 		
 	</package>
