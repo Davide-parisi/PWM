@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"  pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -47,27 +48,38 @@
 			<div class="row">
 				<div class="col-md-8">
 					<div class="user-menu">
-						<ul>
-							<s:if test="#session['cliente']!=null">
+					
+						<s:if test="#session['cliente']!=null">
+
 							<li><a href="<s:url action='AreaRiservataCliente' namespace='/secure'/>"><i class="fa fa-user"></i> My Account</a></li>
-							</s:if>
-							<s:if test="#session['responsabile']!=null">
+
+						</s:if>
+
+						<s:if test="#session['responsabile']!=null">
+
 							<li><a href="<s:url action='AreaRiservataResponsabile' namespace='/secure'/>"><i class="fa fa-user"></i> My Account</a></li>
-							</s:if>
-							<li><a href="#"><i class="fa fa-heart"></i> Wishlist</a></li>
-							<li><a href=<%=root+"/secure/Authenticated"%>><i class="fa fa-user"></i> My
-									Cart</a></li>
-							<s:if test="%{(#session.isEmpty())}">
+
+						</s:if>
+
+						<li><a href="#"><i class="fa fa-heart"></i> Wishlist</a></li>
+
+						<li><a href=<%=root + "/secure/Authenticated"%>><i class="fa fa-user"></i> My Cart</a></li> <%-- Da sistemare link --%>
+
+						<s:if test="%{(#session.isEmpty())}">
+
 							<li><a href="<s:url action='LoginForm' namespace='/'/>"><i class="fa fa-user"></i>Login</a></li>
-							</s:if>
-							<s:if test="%{!(#session.isEmpty())}">
-							<li><a href=<%=root+"/Logout"%>><i class="fa fa-user"></i>Logout</a></li>
-							</s:if>
-						</ul>
+
+						</s:if>
+
+						<s:if test="%{!(#session.isEmpty())}">
+
+							<li><a href="<s:url action='Logout' namespace='/'/>"><i class="fa fa-user"></i>Logout</a></li>
+
+						</s:if>
 					</div>
 				</div>
 
-				<div class="col-md-4">
+				<%-- <div class="col-md-4">   Qui vanno aggiunti i link ai social
 					<div class="header-right">
 						<ul class="list-unstyled list-inline">
 							<li class="dropdown dropdown-small"><a
@@ -91,7 +103,7 @@
 								</ul></li>
 						</ul>
 					</div>
-				</div>
+				</div> --%>
 			</div>
 		</div>
 	</div>
@@ -103,15 +115,16 @@
 				<div class="col-sm-6">
 					<div class="logo">
 						<h1>
-							<a href=<%=root+"/Home"%>>pwm<span>Electronics</span></a>
+							<a href="<s:url action='Home' namespace='/'/>">pwm<span>Electronics</span></a>
 						</h1>
 					</div>
 				</div>
 
 				<div class="col-sm-6">
 					<div class="shopping-item">
-						<a href=<%=root+"/WebApp/Cart.jsp"%>>Cart - <span class="cart-amunt">$800</span>
-							<i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
+						<a href=<%=root + "/WebApp/Cart.jsp"%>>Cart - <span
+							class="cart-amunt">$800</span> <i class="fa fa-shopping-cart"></i>
+							<span class="product-count">5</span></a>
 					</div>
 				</div>
 			</div>
@@ -123,8 +136,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse"
-						data-target=".navbar-collapse">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 						<span class="sr-only">Toggle navigation</span> <span
 							class="icon-bar"></span> <span class="icon-bar"></span> <span
 							class="icon-bar"></span>
@@ -132,16 +144,15 @@
 				</div>
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
-						<li><a href=<%=root+"/Home"%>>Home</a></li>
-						<li><a href=<%=root+"/WebApp/Catalogo.jsp"%>>Shop page</a></li>
-						<li><a href=<%=root+"/WebApp/SingleProduct.jsp"%>>Single product</a></li>
-						<li><a href=<%=root+"/WebApp/Cart.jsp"%>>Cart</a></li>
-						<s:if test="%{!(#session.isEmpty())}">
-						<li><a href=<%=root+"/Logout"%>>Checkout</a></li>
-						</s:if>						
+						<li><a href="<s:url action='Home' namespace='/'/>">Home</a></li>
+						<li><a href=<%=root + "/WebApp/Catalogo.jsp"%>>Shop page</a></li>  <!-- Sistemare tutti i link seguenti -->
+						<li><a href=<%=root + "/WebApp/SingleProduct.jsp"%>>Single
+								product</a></li>
+						<li><a href=<%=root + "/WebApp/Cart.jsp"%>>Cart</a></li>
+						<li><a href=<%=root + "/WebApp/Checkout.jsp"%>>Checkout</a></li>
 						<li><a href="#">Category</a></li>
 						<li><a href="#">Others</a></li>
-						<li><a href=<%=root+"/WebApp/Contatti.jsp"%>>Contact</a></li>
+						<li><a href=<%=root + "/secure/Contatti"%>>Contact</a></li>
 					</ul>
 				</div>
 			</div>

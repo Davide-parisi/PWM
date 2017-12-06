@@ -22,19 +22,29 @@
 	</div>
 	
 		<div style="background-color:#ffaacc;"><s:actionerror/></div>
-	    
-	<s:form action="Register" style="text-align: center; margin: auto; padding: 30px;">
-    	<s:textfield key="global.label.nome" name="cliente.nome"/>
-    	<s:textfield label="Cognome" name="cliente.cognome"/>
-    	<s:textfield label="Codice Fiscale" requiredLabel="true" name="cliente.codiceF"/>
-    	<s:textfield label="Data di nascita (gg/mm/aa)" name="cliente.dataNascita"/>
-    	<s:textfield label="Email" name="cliente.email"/>
-    	<s:textfield label="Telefono" name="cliente.telefono"/>
-    	<s:textfield key="global.label.username" requiredLabel="true" name="cliente.username"/>
-    	<s:password key="global.label.password" showPassword="true" requiredLabel="true" name="cliente.password"/>
-    	<s:submit value="Registrati" style="margin: 30px;"/>
+		
+<div class="maincontent-area">
+<div class="container">
+	<div class="row">
+	<div class="col-md-12">
+		<div class="login-form-wrap">
+		<s:form action="Register">
+    	<s:textfield name="cliente.nome" key="global.label.nome"/>
+    	<s:textfield name="cliente.cognome" label="Cognome"/>
+    	<s:textfield name="cliente.codiceF" label="Codice Fiscale" requiredLabel="true"/>
+    	<s:textfield name="cliente.dataNascita" label="Data di nascita (gg/mm/aa)"/>
+    	<s:textfield name="cliente.email" label="Email"/>
+    	<s:textfield name="cliente.telefono" label="Telefono"/>
+    	<s:textfield name="cliente.username" key="global.label.username" requiredLabel="true"/>
+    	<s:password name="cliente.password" key="global.label.password" showPassword="true" requiredLabel="true"/>
+    	
+    	<s:submit style="margin: 30px;"/>
 		</s:form>
-
+		</div>
+	</div>
+	</div>
+</div>
+</div>
 	<s:include value="Footer.jsp"></s:include>
 	</body>
 	

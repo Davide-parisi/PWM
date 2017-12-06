@@ -6,12 +6,19 @@
 <struts>
 	<package name="login" namespace="/" extends="struts-default">
 	
-		<action name="LoginForm" class="it.unirc.pwm.elettronica.Action.Account.LoginForm">
+	<global-results>
+			<result name="genericException">/WebApp/Exception.jsp</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping exception="java.lang.Exception"
+				result="genericException" />
+		</global-exception-mappings>
+	
+		<action name="LoginForm">
 			<result>/WebApp/LoginForm.jsp</result>
 		</action>
 		
 		<action name="Login" class="it.unirc.pwm.elettronica.Action.Account.Login">
-			<interceptor-ref name="defaultStack" />
 			<result name="successResponsabile" type="redirectAction">/secure/AreaRiservataResponsabile.action</result>
 			<result name="successCliente" type="redirectAction">/secure/AreaRiservataCliente.action</result>
 			<result name="input">/WebApp/LoginForm.jsp</result>
@@ -23,6 +30,7 @@
 
 		<action name="Logout" class="it.unirc.pwm.elettronica.Action.Account.Logout">
 			<result>/WebApp/Checkout.jsp</result>
+			<result name="input">/WebApp/Contatti.jsp</result>
 		</action>
 
 	</package>
@@ -48,16 +56,15 @@
 		<global-results>
 			<result name="login" type="redirect">/WebApp/LoginForm.jsp</result>
 		</global-results>
-
+		
 		<action name="AreaRiservataResponsabile">
-			<result name="success">/WEB-INF/Res/indexR.jsp</result>
+			<result name="success">/WEB-INF/areaRiservata/Responsabile/ProfiloResponsabile.jsp</result>
 			<interceptor-ref name="authenticationResponsabileInterceptor"/>
 		</action>
 		
 			<action name="AreaRiservataCliente">
-			<result name="success">/WEB-INF/Client/ProfiloCliente.jsp</result>
+			<result name="success">/WEB-INF/areaRiservata/Cliente/ProfiloCliente.jsp</result>
 			<interceptor-ref name="authenticationClienteInterceptor"/>
 		</action>
-		
 	</package>
 </struts>

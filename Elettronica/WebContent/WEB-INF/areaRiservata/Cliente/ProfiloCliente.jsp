@@ -6,7 +6,7 @@
 	</head>
 
 	<body>
-	<s:include value="../../WebApp/Header.jsp"></s:include>
+	<s:include value="../../../WebApp/Header.jsp"></s:include>
 	
 	<div class="product-big-title-area">
 		<div class="container">
@@ -56,7 +56,7 @@
      <div class="woocommerce-info" style="text-align: center;"><a href="<s:url action='EliminaAccount' namespace='/'/>">ELIMINA ACCOUNT</a></div>
       </div>
      </div>
-    <s:include value="../../WebApp/Footer.jsp"></s:include>
+    <s:include value="../../../WebApp/Footer.jsp"></s:include>
 	</body>
 	
 </html>

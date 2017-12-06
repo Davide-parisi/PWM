@@ -31,20 +31,29 @@
 		</action>
 		
 		
-		<action name="AggiungiResponsabile" class="it.unirc.pwm.elettronica.Action.Account.AggiungiResponsabile">
+		
+		<action name="AggiungiR">
+
 		<interceptor-ref name="defaultStack"/>
 			<interceptor-ref name="timer" />
 			<interceptor-ref name="logger" />
-			<result>/WEB-INF/Res/AggiungiResponsabile.jsp</result>
+			<result>/WEB-INF/areaRiservata/Responsabile/AggiungiResponsabile.jsp</result>
 		</action>
+
 		
-		<action name="AggiungiR" class="it.unirc.pwm.elettronica.Action.Account.AggiungiR">
+
+		<action name="AggiungiResponsabile" class="it.unirc.pwm.elettronica.Action.Account.AggiungiResponsabile">
+
 			<interceptor-ref name="defaultStack" />
+
 			<interceptor-ref name="timer" />
+
 			<interceptor-ref name="logger" />
-			<result name="success">/WEB-INF/Res/indexR.jsp</result>
-			<result name="input">/WEB-INF/Res/AggiungiResponsabile.jsp</result>
+
+			<result name="success">/WEB-INF/areaRiservata/Responsabile/ProfiloResponsabile.jsp</result>
+
+			<result name="input">/WEB-INF/areaRiservata/Responsabile/AggiungiResponsabile.jsp</result>
+
 		</action>
-		
 	</package>
 </struts>

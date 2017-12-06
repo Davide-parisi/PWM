@@ -30,6 +30,7 @@
 		-->
 		
 		<package name="default" namespace="/" extends="struts-default"> 
+		
 			<action name="Home">
 				<result>/WebApp/Home.jsp</result>
 			</action>

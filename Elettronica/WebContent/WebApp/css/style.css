@@ -242,31 +242,31 @@ body {
 	position: absolute;
 	top: 0;
 	width: 100%;
-	background-position: center;
+	background-position: top center;
 	background-size: cover
 }
 
 .slide-bg:after {
-	background: none repeat scroll 0 0 #000;
+	/*background: none repeat scroll 0 0 #000;*/
 	content: "";
 	height: 100%;
 	left: 0;
-	opacity: 0.6;
+	opacity: 0.7;
 	position: absolute;
 	top: 0;
 	width: 100%;
 }
 
 .slide-one {
-	background-image: url(../img/slide-1.jpg)
+	background-image: url(../img/iphoneX-slider.png)
 }
 
 .slide-two {
-	background-image: url(../img/slide-2.jpg)
+	background-image: url(../img/asus-slider.png)
 }
 
 .slide-three {
-	background-image: url(../img/slide-3.jpg)
+	background-image: url(../img/qled-slider.png)
 }
 
 .slide-text {
@@ -420,7 +420,7 @@ body {
 }
 
 .product-hover a.add-to-cart-link {
-	top: -25%;
+	top: -35%;
 }
 
 .product-hover a.view-details-link {
@@ -506,7 +506,7 @@ body {
 }
 
 .maincontent-area {
-	padding-bottom: 170px
+	padding: 70px 0;
 }
 
 .product-wid-title {
@@ -1337,10 +1337,89 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button {
     text-align: center;
     margin-bottom: 10px;
 }
-
 .label{
-	color: black;
+	 color: black;
     font-size:15px;
     padding: 30px;
     display: block;
+}
+.profile-table {
+	list-style-type: none;
+    font-size: 16px;
+}
+.profile-table li{
+	padding: 1px;
+}
+.profileContainer{
+	padding-top: 30px;
+	padding-bottom:10px;
+}
+.profileContainer ul{
+	border: 1px solid #ddd;
+	font-weight: 700;
+	font-size:20px;
+	list-style:none;
+	margin-bottom:30px;
+	padding:10px;
+}
+.profileContainer h2{
+padding:10px;
+}
+span.errorMessage {
+    float: right;
+    color: red;
+}
+div.login-form-wrap {
+	text-align: center;
+	margin:auto;
+}
+.wwFormTable {
+	
+    padding: 50px 10px;
+    display: inline-block;
+    border: 1px solid #ddd;
+    text-align:center;
+}
+#side-nav ul {
+      margin: auto;
+      padding: 0px;
+      list-style: none;
+      width: 80%;
+      background-color:#1abc9c;
+}
+#side-nav  ul li {
+  position: relative;
+  font-size: small;
+  text-color:#FFF;
+  
+}
+#side-nav li ul {
+  top: 0;
+  display: none;
+  width:100%;
+  background-color:#FFF;
+  font-family: raleway;
+  font-weight: 200;
+}
+#side-nav ul li a {
+     text-decoration: none;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    padding: 1%;
+}
+/* #side-nav  li:hover ul { 
+	display: none; 
+	}
+ */
+#side-nav li:hover  a {
+  color:black;
+}
+#side-nav  li:hover ul li:hover {
+  background-color:#f4f4f4;
+  background-image:none;
+}
+
+td, th {
+	padding:10px;
 }

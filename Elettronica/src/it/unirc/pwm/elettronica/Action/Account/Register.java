@@ -21,8 +21,12 @@ public class Register extends ActionSupport{
 
 	public String execute() throws Exception{
 		
-		cdao.creaCliente(cliente);
-		
+		if(cdao.creaCliente(cliente)) {
+		addActionMessage("Registrazione avvenuta con successo");
 		return SUCCESS;
+		}
+		else {
+			return INPUT;
+		}
 	}
 }

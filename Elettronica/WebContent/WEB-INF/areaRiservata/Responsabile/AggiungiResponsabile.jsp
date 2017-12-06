@@ -7,7 +7,7 @@
 </head>
 
 <body>
-	<s:include value="../../WebApp/Header.jsp"></s:include>
+	<s:include value="../../../WebApp/Header.jsp"></s:include>
 
 	<div class="product-big-title-area">
 		<div class="container">
@@ -24,8 +24,8 @@
 		<s:actionerror />
 	</div>
 	
-				<s:form action="AggiungiR"
-					style="text-align: center; margin: auto; padding: 30px;">
+				<s:form action="AggiungiResponsabile"
+					namespace="/">
 					<s:textfield name="nome"
 						key="global.label.nome" />
 					<s:textfield name="cognome" label="Cognome" />
@@ -42,7 +42,7 @@
 					<s:submit value="Aggiungi" style="margin: 30px;"/>
 				</s:form>
 
-	<s:include value="../../WebApp/Footer.jsp"></s:include>
+	<s:include value="../../../WebApp/Footer.jsp"></s:include>
 </body>
 
 </html>

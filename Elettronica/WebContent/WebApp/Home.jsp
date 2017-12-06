@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="s" uri="/struts-tags"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -12,8 +13,8 @@
 
 </head>
 <body>
-<jsp:include page="Header.jsp"/>
-	
+	<s:include value="Header.jsp"></s:include>
+
 
 	<div class="slider-area">
 		<div class="zigzag-bottom"></div>
@@ -25,7 +26,7 @@
 					<div class="row">
 						<div class="col-md-12">
 							<ol class="carousel-indicators slide-indicators">
-								<li data-target="#slide-list" data-slide-to="0" class="active"></li>
+								<li data-target="#slide-list" data-slide-to="0"></li>
 								<li data-target="#slide-list" data-slide-to="1"></li>
 								<li data-target="#slide-list" data-slide-to="2"></li>
 							</ol>
@@ -44,14 +45,14 @@
 									<div class="row">
 										<div class="col-md-6 col-md-offset-6">
 											<div class="slide-content">
-												<h2>We are awesome</h2>
-												<p>Lorem ipsum dolor sit amet, consectetur adipisicing
-													elit. Consequuntur, dolorem, excepturi. Dolore aliquam
-													quibusdam ut quae iure vero exercitationem ratione!</p>
-												<p>Lorem ipsum dolor sit amet, consectetur adipisicing
-													elit. Modi ab molestiae minus reiciendis! Pariatur ab
-													rerum, sapiente ex nostrum laudantium.</p>
-												<a href="" class="readmore">Learn more</a>
+												<h2>iPhone X</h2>
+												<p>Fin dall'inizio, Apple ha immaginato un iPhone fatto
+													di solo schermo. Un oggetto così coinvolgente che ti fa
+													immergere in quello che vedi. E così intelligente che sa
+													rispondere a un tuo tocco, a una parola, persino a uno
+													sguardo. Con iPhone X quella visione diventa realtà. E il
+													futuro può cominciare.</p>
+												<a href="" class="readmore">Scopri di più</a>
 											</div>
 										</div>
 									</div>
@@ -69,13 +70,14 @@
 									<div class="row">
 										<div class="col-md-6 col-md-offset-6">
 											<div class="slide-content">
-												<h2>We are great</h2>
-												<p>Lorem ipsum dolor sit amet, consectetur adipisicing
-													elit. Saepe aspernatur, dolorum harum molestias tempora
-													deserunt voluptas possimus quos eveniet, vitae voluptatem
-													accusantium atque deleniti inventore. Enim quam placeat
-													expedita! Quibusdam!</p>
-												<a href="" class="readmore">Learn more</a>
+												<h2>ASUS VivoBook S15</h2>
+												<p>ASUS VivoBook S15 offre la perfetta combinazione tra
+													bellezza e prestazioni. Il design leggero ed elegante si
+													accompagna a tecnologie ad alte prestazioni: potente
+													processore Intel Core i7, 16GB di RAM e scheda grafica
+													NVIDIA GeForce 940MX. VivoBook S15 è l'alleato ideale per i
+													frenetici ritmi di vita urbani.</p>
+												<a href="" class="readmore">Scopri di più</a>
 											</div>
 										</div>
 									</div>
@@ -93,15 +95,13 @@
 									<div class="row">
 										<div class="col-md-6 col-md-offset-6">
 											<div class="slide-content">
-												<h2>We are superb</h2>
-												<p>Lorem ipsum dolor sit amet, consectetur adipisicing
-													elit. Dolores, eius?</p>
-												<p>Lorem ipsum dolor sit amet, consectetur adipisicing
-													elit. Deleniti voluptates necessitatibus dicta recusandae
-													quae amet nobis sapiente explicabo voluptatibus rerum nihil
-													quas saepe, tempore error odio quam obcaecati suscipit
-													sequi.</p>
-												<a href="" class="readmore">Learn more</a>
+												<h2>Samsung QLED TV</h2>
+												<p>Samsung QLED TV offre la massima qualità di immagine,
+													un design adatto al tuo spazio e un unico, praticissimo
+													telecomando. Scopri tutto sulla nuova innovazione dei
+													televisori QLED. Vedi in dettaglio come funziona la
+													tecnologia Quantum Dot e ammirane l'elegante design.</p>
+												<a href="" class="readmore">Scopri di più</a>
 											</div>
 										</div>
 									</div>
@@ -488,6 +488,6 @@
 	</div>
 	<!-- End product widget area -->
 
-	<jsp:include page="Footer.jsp"/>
+	<s:include value="Footer.jsp"></s:include>
 </body>
 </html>

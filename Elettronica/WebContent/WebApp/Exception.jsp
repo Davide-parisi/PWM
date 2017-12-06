@@ -9,7 +9,7 @@
 
 	  <hr>
 	    <h3>Eccezione</h3>  
-	    <p>Si è verificata un'eccezione: <s:property value="exception" />
+	    <p>Si è verificata un'eccezione:
 	    </p>
 	    <p>Dettagli: <s:property value="exceptionStack" />
 	    </p>
