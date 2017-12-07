@@ -45,6 +45,8 @@ public class ClienteDAOImplement implements ClienteDAOInterface{
 		session = HibernateUtil.getSessionFactory().openSession();
 		boolean control=false;
 		try {
+			System.out.println(c.toString());
+			System.out.println("l'id è"+c.getIdaccount());
 			transaction=session.beginTransaction();
 			session.update(c);
 			logger.info("Cliente modificato");

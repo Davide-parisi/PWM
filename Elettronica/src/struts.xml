@@ -37,6 +37,7 @@
 		</package>	
  	<include file="it/unirc/pwm/elettronica/Action/Account/accesso.xml"/>
     <include file="it/unirc/pwm/elettronica/Action/Account/registration.xml"/>
+    <include file="it/unirc/pwm/elettronica/Action/Cliente/profiloCliente.xml"/>
 <!--  	<include file="it/unirc/pwm/esempio1/esempio1.xml"/>
     <include file="it/unirc/pwm/esempio2/esempio2.xml"/>
     <include file="it/unirc/pwm/esempio3/esempio3.xml"/>

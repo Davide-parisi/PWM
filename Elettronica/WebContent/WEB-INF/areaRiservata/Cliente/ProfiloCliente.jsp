@@ -39,10 +39,11 @@
 		<div class="container">
 			<div class="row">
 				<div class="single-sidebar">
-
+					<s:actionmessage />
 					<div class="col-md-4">
 						<h2 class="sidebar-title">Informazioni Personali</h2>
 						<ul>
+						<li>ID: <s:property value="#session.cliente.idAccount" />
 							<li>Nome: <s:property value="#session.cliente.nome" />
 							<li>Cognome: <s:property value="#session.cliente.cognome" />
 							<li>Codice fiscale: <s:property
@@ -88,7 +89,8 @@
 									class="button"
 									style="display: block; float: none; color: #FFF;">PROMOZIONI</a>
 									<ul id="menuPromozioni" class="header-menu-tendina">
-										<li><a href="cliente/visualizzaPromozioni.jsp">Le mie Promozioni</a></li>
+										<li><a href="cliente/visualizzaPromozioni.jsp">Le mie
+												Promozioni</a></li>
 									</ul></li>
 
 							</ul>
@@ -97,11 +99,11 @@
 				</div>
 
 				<div class="woocommerce-info" style="text-align: center;">
-					<a href="<s:url action='ModificaAccount' namespace='/'/>">MODIFICA
+					<a href="<s:url action='ModificaProfilo' namespace='/'/>">MODIFICA
 						ACCOUNT</a>
 				</div>
 				<div class="woocommerce-info" style="text-align: center;">
-					<a href="<s:url action='EliminaAccount' namespace='/'/>">ELIMINA
+					<a href="<s:url action='EliminaProfilo' namespace='/'/>">ELIMINA
 						ACCOUNT</a>
 				</div>
 			</div>

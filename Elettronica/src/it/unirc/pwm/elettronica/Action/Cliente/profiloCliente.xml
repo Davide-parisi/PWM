@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="profiloCliente" namespace="/" extends="struts-default">
+
+		<interceptors>
+
+			<!-- definizione di un nuovo interceptor -->
+			<interceptor name="authenticationClienteInterceptor"
+				class="it.unirc.pwm.elettronica.Action.Account.utils.AuthenticationClienteInterceptor" />
+			<interceptor name="authenticationResponsabileInterceptor"
+				class="it.unirc.pwm.elettronica.Action.Account.utils.AuthenticationResponsabileInterceptor" />
+
+			<!-- definizione di un nuovo stack di interceptor -->
+			<interceptor-stack name="secureStack">
+				<interceptor-ref name="authenticationClienteInterceptor" />
+				<interceptor-ref name="authenticationResponsabileInterceptor" />
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+
+		</interceptors>
+
+		<global-results>
+			<result name="genericException">/WebApp/Exception.jsp</result>
+		</global-results>
+		<global-exception-mappings>
+			<exception-mapping exception="java.lang.Exception"
+				result="genericException" />
+		</global-exception-mappings>
+
+		<action name="ModificaProfilo">
+			<interceptor-ref name="defaultStack" />
+			<interceptor-ref name="timer" />
+			<interceptor-ref name="logger" />
+			<result>/WEB-INF/areaRiservata/Cliente/ModificaProfilo.jsp</result>
+		</action>
+
+		<action name="ModificaCliente"
+			class="it.unirc.pwm.elettronica.Action.Cliente.ModificaCliente">
+			<interceptor-ref name="defaultStack" />
+			<interceptor-ref name="timer" />
+			<interceptor-ref name="logger" />
+			<result name="success">/WEB-INF/areaRiservata/Cliente/ProfiloCliente.jsp
+			</result>
+			<result name="input" type="redirectAction">ModificaProfilo.action
+			</result>
+		</action>
+
+	</package>
+
+	<package name="eliminaCliente" namespace="/" extends="struts-default">
+		<action name="EliminaProfilo"
+			class="it.unirc.pwm.elettronica.Action.Cliente.EliminaCliente">
+			<result name="success" type="redirect">/HOME.action</result>
+		</action>
+	</package>
+
+</struts>
