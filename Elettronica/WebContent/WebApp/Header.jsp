@@ -30,9 +30,11 @@
 	href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
 <!-- Custom CSS -->
+<link rel="icon" href=<%=root + "/favicon.ico"%> type="image/x-icon">
 <link rel="stylesheet" href=<%=root + "/WebApp/css/owl.carousel.css"%>>
 <link rel="stylesheet" href=<%=root + "/WebApp/css/style.css"%>>
 <link rel="stylesheet" href=<%=root + "/WebApp/css/responsive.css"%>>
+<%-- <link rel="shortcut icon" type="image/png" href=<%=root + "/WebApp/img/favicon.png"%>/> --%>
 
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

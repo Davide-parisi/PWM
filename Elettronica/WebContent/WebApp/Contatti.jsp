@@ -5,11 +5,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<jsp:include page="Header.jsp"></jsp:include>
 <title>Contatti</title>
 </head>
 <body>
 	<!-- begin #header -->
-   <jsp:include page="Header.jsp"></jsp:include>
     <!-- end #header -->
 
 <div class="product-big-title-area">

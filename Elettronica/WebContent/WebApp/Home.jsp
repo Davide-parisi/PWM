@@ -9,11 +9,11 @@
 %>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<s:include value="Header.jsp"></s:include>
 <title>Home</title>
 
 </head>
 <body>
-	<s:include value="Header.jsp"></s:include>
 
 
 	<div class="slider-area">
@@ -432,7 +432,7 @@
 						<a href="#" class="wid-view-more">View All</a>
 						<div class="single-wid-product">
 							<a href="single-product.html"><img
-								src=<%=root + "WebApp/img/product-thumb-3.jpg"%> alt=""
+								src=<%=root + "/WebApp/img/product-thumb-3.jpg"%> alt=""
 								class="product-thumb"></a>
 							<h2>
 								<a href="single-product.html">Apple new i phone 6</a>

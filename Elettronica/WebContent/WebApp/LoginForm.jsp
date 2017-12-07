@@ -8,11 +8,11 @@
 	String root = request.getSession().getServletContext().getContextPath();
 %>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<s:include value="Header.jsp"></s:include>
 <title>Login</title>
     
 </head>
 <body>
-<s:include value="Header.jsp"></s:include>
 
 <div class="product-big-title-area">
 		<div class="container">

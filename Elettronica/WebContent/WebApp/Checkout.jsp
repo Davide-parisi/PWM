@@ -5,11 +5,11 @@
 <head>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<jsp:include page="Header.jsp"/>
 <title>Riepilogo</title>
 
 </head>
 <body>
-<jsp:include page="Header.jsp"/>
 
 <div class="product-big-title-area">
 		<div class="container">
