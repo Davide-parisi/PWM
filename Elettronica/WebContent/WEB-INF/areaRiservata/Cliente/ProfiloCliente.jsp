@@ -80,7 +80,7 @@
 								<li onclick="visualizza('menuTessera')"><a class="button"
 									style="display: block; float: none; color: #FFF;">TESSERA</a>
 									<ul id="menuTessera" class="header-menu-tendina">
-										<li><a href="cliente/visualizzaTessera.jsp">La mia
+										<li><a href="<s:url action='VisualizzaTessera' namespace='/'/>">La mia
 												Tessera Fedeltà</a></li>
 									</ul></li>
 
@@ -88,7 +88,7 @@
 									class="button"
 									style="display: block; float: none; color: #FFF;">PROMOZIONI</a>
 									<ul id="menuPromozioni" class="header-menu-tendina">
-										<li><a href="cliente/visualizzaPromozioni.jsp">Le mie
+										<li><a href="<s:url action='VisualizzaPromozioni' namespace='/'/>">Le mie
 												Promozioni</a></li>
 									</ul></li>
 
@@ -96,6 +96,7 @@
 						</div>
 					</div>
 				</div>
+			</div>
 
 				<div class="woocommerce-info" style="text-align: center;">
 					<a href="<s:url action='ModificaProfilo' namespace='/'/>">MODIFICA
@@ -105,7 +106,6 @@
 					<a href="<s:url action='EliminaProfilo' namespace='/'/>">ELIMINA
 						ACCOUNT</a>
 				</div>
-			</div>
 		</div>
 		<s:include value="../../../WebApp/Footer.jsp"></s:include>
 </body>

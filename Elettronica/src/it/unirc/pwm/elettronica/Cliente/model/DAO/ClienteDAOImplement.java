@@ -24,6 +24,7 @@ public class ClienteDAOImplement implements ClienteDAOInterface{
 		boolean control=false;
 		try {
 			transaction=session.beginTransaction();
+			c.setAbilitato(1);
 			session.save(c);
 			logger.info("Cliente inserito");
 			control=true;

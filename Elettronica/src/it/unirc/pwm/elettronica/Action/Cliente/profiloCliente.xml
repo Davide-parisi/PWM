@@ -43,6 +43,20 @@
 			<result name="input">/WEB-INF/areaRiservata/Cliente/ProfiloCliente.jsp</result>
 			
 		</action>
+		
+		<action name="VisualizzaTessera" class="it.unirc.pwm.elettronica.Action.Cliente.VisualizzaTessera">
+		<interceptor-ref name="defaultStack" />
+			<interceptor-ref name="timer" />
+			<interceptor-ref name="logger" />
+		<result name="success">/WEB-INF/areaRiservata/Cliente/VisualizzaTessera.jsp</result>
+		</action>
+		
+		<action name="VisualizzaPromozioni" class="it.unirc.pwm.elettronica.Action.Cliente.VisualizzaPromozioni">
+		<interceptor-ref name="defaultStack" />
+			<interceptor-ref name="timer" />
+			<interceptor-ref name="logger" />
+		<result name="success">/WEB-INF/areaRiservata/Cliente/VisualizzaPromozioni.jsp</result>
+		</action>
 
 	</package>
 
