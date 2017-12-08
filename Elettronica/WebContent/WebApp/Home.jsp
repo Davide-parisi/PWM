@@ -11,16 +11,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <s:include value="Header.jsp"></s:include>
 <title>Home</title>
-
 </head>
 <body>
-
-
-	<div class="slider-area">
+<div class="slider-area">
 		<div class="zigzag-bottom"></div>
 		<div id="slide-list" class="carousel carousel-fade slide"
 			data-ride="carousel">
-
 			<div class="slide-bulletz">
 				<div class="container">
 					<div class="row">

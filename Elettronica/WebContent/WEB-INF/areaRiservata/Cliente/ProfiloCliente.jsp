@@ -43,7 +43,6 @@
 					<div class="col-md-4">
 						<h2 class="sidebar-title">Informazioni Personali</h2>
 						<ul>
-						<li>ID: <s:property value="#session.cliente.idAccount" />
 							<li>Nome: <s:property value="#session.cliente.nome" />
 							<li>Cognome: <s:property value="#session.cliente.cognome" />
 							<li>Codice fiscale: <s:property

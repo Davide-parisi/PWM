@@ -7,6 +7,7 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import it.unirc.pwm.elettronica.Account.model.Account;
+import it.unirc.pwm.elettronica.Cliente.model.Cliente;
 import it.unirc.pwm.elettronica.hibernate.util.HibernateUtil;
 
 
@@ -110,6 +111,7 @@ public class AccountDAOImplement implements AccountDAOInterface{
 	public Account esisteAccount(Account a) {
 		session = HibernateUtil.getSessionFactory().openSession();
 		Account res = null;
+		Cliente c =null;
 		try {
 			transaction=session.beginTransaction();
 			res = (Account)session.createQuery( "from Account where username= :username AND " +

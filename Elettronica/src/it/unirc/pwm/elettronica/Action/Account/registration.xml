@@ -30,8 +30,10 @@
 			<result name="input">/WebApp/Registration.jsp</result>
 		</action>
 		
+		</package>
 		
 		
+		<package name="registrationAdmin" namespace="/" extends="SecureResponsabile">
 		<action name="AggiungiR">
 
 		<interceptor-ref name="defaultStack"/>

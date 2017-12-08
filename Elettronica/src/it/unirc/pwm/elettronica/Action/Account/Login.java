@@ -60,10 +60,14 @@ public class Login extends ActionSupport implements SessionAware {
 		c.setIdaccount(a.getIdaccount());
 		r=rdao.cercaResponsabile(r);
 		c=cdao.cercaCliente(c);
-		
+//		System.out.println(c.getAbilitato());
 		if(c!=null) {
+			if(c.getAbilitato()==0)
+				return INPUT;
+			else {
 			session.put("cliente", c);
 			return "successCliente";
+			}
 		}
 			session.put("responsabile", r);
 			return "successResponsabile";

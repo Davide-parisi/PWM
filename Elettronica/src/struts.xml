@@ -28,6 +28,56 @@
 				specific examples or chapters, its just a kind of utility for the whole 
 				application.
 		-->
+		<package name="Secure" namespace="/WEB-INF/areaRiservata/Cliente" extends="struts-default">
+		<interceptors>
+			<!-- definizione di un nuovo interceptor -->
+			<interceptor name="authenticationClienteInterceptor" class="it.unirc.pwm.elettronica.Action.Account.utils.AuthenticationClienteInterceptor" />
+			<!-- definizione di un nuovo stack di interceptor -->
+			<interceptor-stack name="secureStack">
+				<interceptor-ref name="authenticationClienteInterceptor" />
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+		</interceptors>
+		<!-- Verifica utente loggato  -->
+		<default-interceptor-ref name="secureStack" /><!-- 
+			tutte le action dentro secure dovranno essere invocate utilizzando il defaultStack -->
+		<global-results>
+			<result name="login" type="redirect">/HOME.action</result>
+			<!-- vale per qualunque action -->
+		</global-results>
+	</package>
+
+
+	<package name="SecureResponsabile" namespace="/WEB-INF/areaRiservata/Responsabile"
+		extends="struts-default">
+		<interceptors>
+			<!-- definizione di un nuovo interceptor -->
+
+		<interceptor name="authenticationResponsabileInterceptor" class="it.unirc.pwm.elettronica.Action.Account.utils.AuthenticationResponsabileInterceptor" />
+			<!-- definizione di un nuovo stack di interceptor -->
+			<interceptor-stack name="secureResponsabileStack">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="authenticationResponsabileInterceptor" />
+			</interceptor-stack>
+		</interceptors>
+		<!-- Verifica utente loggato ??? -->
+		<default-interceptor-ref name="secureResponsabileStack" /><!-- 
+			tutte le action dentro secure dovranno essere invocate utilizzando il defaultStack -->
+			
+			
+
+		<global-results>
+
+			<result name="login" type="redirect">/Home.action</result><!-- vale per qualunque 
+				action -->
+
+		</global-results>
+		
+		
+		
+		
+
+	</package>
 		
 		<package name="default" namespace="/" extends="struts-default"> 
 		
